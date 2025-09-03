@@ -64,49 +64,40 @@ const Index = () => {
           />
         </div>
 
-        <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-fluid-2xl items-center">
-              
-            {/* Profile Picture with Floating Animation */}
-            <motion.div 
-              className="flex justify-center lg:justify-start order-1 lg:order-1"
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid lg:grid-cols-[1fr_0.7fr] gap-8 items-center">
+            {/* Profile Picture */}
+            <motion.div className="flex items-center justify-center lg:justify-centre"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div className="floating-element">
-                <img
-                  src={myPic}
-                  alt="Arjun Profile"
-                  className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full shadow-floating border-4 border-primary/30 object-cover p-2 glass-card hover-lift"
-                />
-              </div>
+              <img
+                src={myPic}
+                alt="Arjun Profile"
+                className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full shadow-floating border-4 border-primary/30 object-cover p-2 glass-card hover-lift"
+              />
             </motion.div>
-            
-            {/* Hero Content */}
+
+            {/* Hero Text */}
             <motion.div
-              className="text-center lg:text-left space-y-fluid-lg order-2 lg:order-2"
+              className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left space-y-2"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <div className="space-y-fluid-md">
-                <h1 className="text-fluid-5xl md:text-fluid-6xl lg:text-fluid-7xl font-display leading-none">
-                  <span className="text-gradient text-glow">
-                    Hi, I'm Arjun R 👋
-                  </span>
-                </h1>
-                <h2 className="text-fluid-2xl md:text-fluid-3xl text-foreground/90 font-display">
-                  Full Stack Developer
-                </h2>
-              </div>
-
-              <p className="text-fluid-lg text-foreground/80 max-w-2xl leading-relaxed">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display leading-tight text-gradient text-glow">
+                Hi, I'm Arjun R 👋
+              </h1>
+              <h2 className="text-xl md:text-2xl lg:text-3xl text-foreground/80 font-semibold">
+                Full Stack Developer
+              </h2>
+              <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
                 To apply my knowledge and problem-solving abilities towards innovative and real-world projects. 
                 Currently pursuing honors in Full Stack Development, with a commitment to continuous learning 
                 and collaboration in dynamic team environments.
               </p>
-
+      
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row space-fluid-md justify-center lg:justify-start">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -118,7 +109,7 @@ const Index = () => {
                   </Button>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button variant="outline" size="lg" className="glass-button text-fluid-base px-fluid-lg py-fluid-md" asChild>
+                  <Button variant="outline" size="lg" className="glass-button hover:gradient-primary text-fluid-base px-fluid-lg py-fluid-md" asChild>
                     <a href="#projects">
                       <Code className="mr-2 h-5 w-5" />
                       View Projects
@@ -126,7 +117,7 @@ const Index = () => {
                   </Button>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button variant="outline" size="lg" className="glass-button text-fluid-base px-fluid-lg py-fluid-md" asChild>
+                  <Button variant="outline" size="lg" className="glass-button hover:gradient-primary text-fluid-base px-fluid-lg py-fluid-md" asChild>
                     <a href={resume} download="Arjun_R_Resume.pdf">
                       <ExternalLink className="mr-2 h-5 w-5" />
                         Download Resume
@@ -147,7 +138,7 @@ const Index = () => {
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground/70 hover:text-primary transition-spring hover:drop-shadow-glow p-fluid-sm rounded-xl glass-button"
+                    className="text-foreground/70 hover:gradient-primary transition-spring hover:drop-shadow-glow p-fluid-sm rounded-xl glass-button"
                     whileHover={{ scale: 1.2, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -179,7 +170,7 @@ const Index = () => {
               </p>
             </motion.div>
             
-            <div className="grid-fluid">
+            <div className="grid-fluid p-6 pt-12">
               {[
                 { title: "Frontend", icon: Code, skills: frontendSkills },
                 { title: "Backend", icon: Database, skills: backendSkills },
@@ -192,13 +183,14 @@ const Index = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="glass-card hover-lift h-full">
+                  <Card className="glass-card hover-lift h-full ">
                     <CardContent className="p-fluid-xl text-center space-y-fluid-lg h-full flex flex-col">
-                      <div className="w-16 h-16 mx-auto gradient-primary rounded-2xl flex items-center justify-center mb-fluid-md">
+                      <div className="w-16 h-16 mx-auto gradient-primary rounded-2xl flex items-center justify-center mb-6">
                         <category.icon className="h-8 w-8 text-primary-foreground" />
                       </div>
                       <h3 className="text-fluid-xl font-bold text-card-foreground">{category.title}</h3>
-                      <div className="flex flex-wrap justify-center space-fluid-sm flex-1 items-start">
+                      <div className="flex flex-wrap justify-center gap-2">
+
                         {category.skills.map((skill) => (
                           <Badge key={skill} variant="secondary" className="bg-secondary/80 text-secondary-foreground text-fluid-sm px-fluid-md py-fluid-xs hover-glow transition-spring">
                             {skill}
@@ -509,7 +501,7 @@ const Index = () => {
                   whileHover={{ scale: 1.05 }} 
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button variant="outline" size="lg" className="glass-button text-fluid-base px-fluid-lg py-fluid-md" asChild>
+                  <Button variant="outline" size="lg" className="glass-button hover:gradient-primary text-fluid-base px-fluid-lg py-fluid-md" asChild>
                     <a href={contact.href} target={contact.href.startsWith('http') ? "_blank" : undefined} rel={contact.href.startsWith('http') ? "noopener noreferrer" : undefined}>
                       <contact.icon className="mr-2 h-5 w-5" />
                       {contact.label}
