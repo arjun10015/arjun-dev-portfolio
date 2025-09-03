@@ -53,74 +53,80 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen gradient-subtle">
+    <div className="min-h-screen gradient-subtle overflow-x-hidden">
       {/* Hero Section */}
-      <section className="section-spacing relative overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="section-spacing gradient-hero min-h-screen flex items-center relative">
+        <div className="absolute inset-0 opacity-10">
           <img 
             src={heroTech} 
             alt="Tech workspace background" 
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 gradient-primary opacity-30"></div>
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
+          <div className="grid lg:grid-cols-2 gap-fluid-2xl items-center">
               
-            {/* Left Side - Profile Picture */}
-            <div className="flex-shrink-0 flex justify-center md:justify-start">
-              <img
-                src={myPic}
-                alt="Arjun Profile"
-                className="w-56 h-56 md:w-72 md:h-72 rounded-full shadow-elegant border-4 border-primary object-cover p-1 bg-white"
-              />
-            </div>
+            {/* Profile Picture with Floating Animation */}
+            <motion.div 
+              className="flex justify-center lg:justify-start order-1 lg:order-1"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="floating-element">
+                <img
+                  src={myPic}
+                  alt="Arjun Profile"
+                  className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full shadow-floating border-4 border-primary/30 object-cover p-2 glass-card hover-lift"
+                />
+              </div>
+            </motion.div>
             
-            {/* Right Side - Text Content */}
+            {/* Hero Content */}
             <motion.div
-              className="text-center md:text-left space-y-6"
+              className="text-center lg:text-left space-y-fluid-lg order-2 lg:order-2"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
             >
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-7xl font-bold font-display">
-                  <span className="text-gradient">
+              <div className="space-y-fluid-md">
+                <h1 className="text-fluid-5xl md:text-fluid-6xl lg:text-fluid-7xl font-display leading-none">
+                  <span className="text-gradient text-glow">
                     Hi, I'm Arjun R 👋
                   </span>
                 </h1>
-                <h2 className="text-2xl md:text-3xl text-foreground font-display">
+                <h2 className="text-fluid-2xl md:text-fluid-3xl text-foreground/90 font-display">
                   Full Stack Developer
                 </h2>
               </div>
 
-              <p className="text-lg md:text-xl text-foreground max-w-2xl leading-relaxed">
+              <p className="text-fluid-lg text-foreground/80 max-w-2xl leading-relaxed">
                 To apply my knowledge and problem-solving abilities towards innovative and real-world projects. 
                 Currently pursuing honors in Full Stack Development, with a commitment to continuous learning 
                 and collaboration in dynamic team environments.
               </p>
 
-              {/* Buttons with hover animation */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <motion.div whileHover={{ scale: 1.05 }}>
-                  <Button size="lg" className="tech-glow gradient-primary border-0 text-primary-foreground" asChild>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row space-fluid-md justify-center lg:justify-start">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" className="tech-glow gradient-primary border-0 text-primary-foreground px-fluid-lg py-fluid-md text-fluid-base" asChild>
                     <a href="mailto:arjunpatel10015@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Arjun%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards">
                       <Mail className="mr-2 h-5 w-5" />
                       Get In Touch
                     </a>
                   </Button>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }}>
-                  <Button variant="outline" size="lg" className="tech-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth" asChild>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button variant="outline" size="lg" className="glass-button text-fluid-base px-fluid-lg py-fluid-md" asChild>
                     <a href="#projects">
                       <Code className="mr-2 h-5 w-5" />
                       View Projects
                     </a>
                   </Button>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }}>
-                  <Button variant="outline" size="lg" className="tech-glow border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth" asChild>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button variant="outline" size="lg" className="glass-button text-fluid-base px-fluid-lg py-fluid-md" asChild>
                     <a href={resume} download="Arjun_R_Resume.pdf">
                       <ExternalLink className="mr-2 h-5 w-5" />
                         Download Resume
@@ -129,8 +135,8 @@ const Index = () => {
                 </motion.div>
               </div>
 
-              {/* Social Links with animation */}
-              <div className="flex justify-center md:justify-start space-x-6 pt-6">
+              {/* Social Links */}
+              <div className="flex justify-center lg:justify-start space-x-fluid-lg pt-fluid-lg">
                 {[ 
                   { Icon: Github, link: "https://github.com/arjun10015" },
                   { Icon: Linkedin, link: "https://www.linkedin.com/in/arjun-r-9434a3253" },
@@ -141,8 +147,8 @@ const Index = () => {
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground hover:text-primary transition-smooth hover:drop-shadow-glow"
-                    whileHover={{ scale: 1.2 }}
+                    className="text-foreground/70 hover:text-primary transition-spring hover:drop-shadow-glow p-fluid-sm rounded-xl glass-button"
+                    whileHover={{ scale: 1.2, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <Icon className="h-6 w-6" />
@@ -157,64 +163,52 @@ const Index = () => {
       {/* Skills Section */}
       <section className="section-spacing">
         <div className="container-custom">
-          <div className="text-center space-y-12">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
+          <div className="text-center space-y-fluid-2xl">
+            <motion.div 
+              className="space-y-fluid-md"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-fluid-4xl font-display text-foreground text-glow">
                 Technical Skills
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-fluid-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Technologies and tools I work with to bring ideas to life
               </p>
-            </div>
+            </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="tech-glow border-border/20 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 mx-auto gradient-primary rounded-2xl flex items-center justify-center">
-                    <Code className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-bold text-card-foreground">Frontend</h3>
-                  <div className="flex flex-wrap justify-center gap-2">
-                    {frontendSkills.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="bg-secondary/80 text-secondary-foreground">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="tech-glow border-border/20 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 mx-auto gradient-primary rounded-2xl flex items-center justify-center">
-                    <Database className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-bold text-card-foreground">Backend</h3>
-                  <div className="flex flex-wrap justify-center gap-2">
-                    {backendSkills.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="bg-secondary/80 text-secondary-foreground">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="tech-glow border-border/20 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 mx-auto gradient-primary rounded-2xl flex items-center justify-center">
-                    <Globe className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-bold text-card-foreground">Soft Skills</h3>
-                  <div className="flex flex-wrap justify-center gap-2">
-                    {softSkills.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="bg-secondary/80 text-secondary-foreground">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid-fluid">
+              {[
+                { title: "Frontend", icon: Code, skills: frontendSkills },
+                { title: "Backend", icon: Database, skills: backendSkills },
+                { title: "Soft Skills", icon: Globe, skills: softSkills }
+              ].map((category, index) => (
+                <motion.div
+                  key={category.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="glass-card hover-lift h-full">
+                    <CardContent className="p-fluid-xl text-center space-y-fluid-lg h-full flex flex-col">
+                      <div className="w-16 h-16 mx-auto gradient-primary rounded-2xl flex items-center justify-center mb-fluid-md">
+                        <category.icon className="h-8 w-8 text-primary-foreground" />
+                      </div>
+                      <h3 className="text-fluid-xl font-bold text-card-foreground">{category.title}</h3>
+                      <div className="flex flex-wrap justify-center space-fluid-sm flex-1 items-start">
+                        {category.skills.map((skill) => (
+                          <Badge key={skill} variant="secondary" className="bg-secondary/80 text-secondary-foreground text-fluid-sm px-fluid-md py-fluid-xs hover-glow transition-spring">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
@@ -223,46 +217,60 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="section-spacing">
         <div className="container-custom">
-          <div className="text-center space-y-12">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
+          <div className="text-center space-y-fluid-2xl">
+            <motion.div 
+              className="space-y-fluid-md"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-fluid-4xl font-display text-foreground text-glow">
                 Featured Projects
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-fluid-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 A collection of projects that showcase my technical skills and problem-solving abilities
               </p>
-            </div>
+            </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 space-fluid-xl">
               {projects.map((project, index) => (
-                <Card key={index} className="tech-glow border-border/20 bg-card/50 backdrop-blur-sm group">
-                  <CardContent className="p-6 space-y-4">
-                    <div className="space-y-2">
-                      <div className="text-center space-y-2">
-                        <h3 className="text-xl font-bold text-card-foreground group-hover:text-primary transition-smooth">
-                          {project.title}
-                        </h3>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="glass-card hover-lift h-full group">
+                    <CardContent className="p-fluid-xl space-y-fluid-lg h-full flex flex-col">
+                      <div className="space-y-fluid-md flex-1">
+                        <div className="text-center space-y-fluid-sm">
+                          <h3 className="text-fluid-xl font-bold text-card-foreground group-hover:text-primary transition-spring">
+                            {project.title}
+                          </h3>
+                          <p className="text-fluid-sm text-primary font-medium bg-primary/10 px-fluid-md py-fluid-xs rounded-full inline-block">
+                            {project.achievement}
+                          </p>
+                        </div>
+                        <p className="text-card-foreground/80 text-fluid-base leading-relaxed">
+                          {project.description}
+                        </p>
+                        <p className="text-fluid-sm text-muted-foreground">
+                          <strong>Role:</strong> {project.role}
+                        </p>
                       </div>
-                      <p className="text-sm text-primary font-medium">
-                        {project.achievement}
-                      </p>
-                      <p className="text-card-foreground text-sm leading-relaxed">
-                        {project.description}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        <strong>Role:</strong> {project.role}
-                      </p>
-                    </div>
-                    
-                    <div className="flex flex-wrap justify-center gap-2">
-                      {project.tech.map((tech) => (
-                        <Badge key={tech} variant="outline" className="border-primary/30 text-primary">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                      
+                      <div className="flex flex-wrap justify-center space-fluid-sm">
+                        {project.tech.map((tech) => (
+                          <Badge key={tech} variant="outline" className="border-primary/30 text-primary hover-glow transition-spring text-fluid-xs px-fluid-sm py-1">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -272,71 +280,81 @@ const Index = () => {
       {/* Education & Experience Section */}
       <section className="section-spacing">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-fluid-2xl">
             {/* Education */}
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-center text-foreground">
+            <motion.div 
+              className="space-y-fluid-xl"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-fluid-4xl font-display text-center text-foreground text-glow">
                 Education
               </h2>
               
-              <div className="space-y-6">
-                <Card className="tech-glow border-border/20 bg-card/50 backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                        <GraduationCap className="h-6 w-6 text-primary-foreground" />
-                      </div>
-                      <div className="space-y-2">
-                        <h3 className="font-bold text-card-foreground">B.E (Computer Science & Engineering)</h3>
-                        <p className="text-muted-foreground">Saranathan College Of Engineering, Tiruchirappalli</p>
-                        <p className="text-sm text-primary font-medium">CGPA: 8.59 | 2022 - 2026</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="tech-glow border-border/20 bg-card/50 backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                        <GraduationCap className="h-6 w-6 text-primary-foreground" />
-                      </div>
-                      <div className="space-y-2">
-                        <h3 className="font-bold text-card-foreground">HSC (Computer Science)</h3>
-                        <p className="text-muted-foreground">Bishop Heber Higher Secondary School</p>
-                        <p className="text-sm text-primary font-medium">85.50% | 2021 - 2022</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Experience */}
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-center text-foreground">
-                Experience
-              </h2>
-              
-              <div className="space-y-6">
-                {internships.map((internship, index) => (
-                  <Card key={index} className="tech-glow border-border/20 bg-card/50 backdrop-blur-sm">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
+              <div className="space-y-fluid-lg">
+                {[
+                  {
+                    degree: "B.E (Computer Science & Engineering)",
+                    institution: "Saranathan College Of Engineering, Tiruchirappalli",
+                    grade: "CGPA: 8.59 | 2022 - 2026"
+                  },
+                  {
+                    degree: "HSC (Computer Science)",
+                    institution: "Bishop Heber Higher Secondary School",
+                    grade: "85.50% | 2021 - 2022"
+                  }
+                ].map((edu, index) => (
+                  <Card key={index} className="glass-card hover-lift">
+                    <CardContent className="p-fluid-lg">
+                      <div className="flex items-start space-x-fluid-md">
                         <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                          <Code className="h-6 w-6 text-primary-foreground" />
+                          <GraduationCap className="h-6 w-6 text-primary-foreground" />
                         </div>
-                        <div className="space-y-2">
-                          <h3 className="font-bold text-card-foreground">{internship.role}</h3>
-                          <p className="text-muted-foreground">{internship.company}</p>
-                          <p className="text-sm text-primary font-medium">{internship.duration}</p>
+                        <div className="space-y-fluid-sm">
+                          <h3 className="font-bold text-card-foreground text-fluid-lg">{edu.degree}</h3>
+                          <p className="text-muted-foreground text-fluid-base">{edu.institution}</p>
+                          <p className="text-fluid-sm text-primary font-medium">{edu.grade}</p>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
                 ))}
               </div>
-            </div>
+            </motion.div>
+
+            {/* Experience */}
+            <motion.div 
+              className="space-y-fluid-xl"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-fluid-4xl font-display text-center text-foreground text-glow">
+                Experience
+              </h2>
+              
+              <div className="space-y-fluid-lg">
+                {internships.map((internship, index) => (
+                  <Card key={index} className="glass-card hover-lift">
+                    <CardContent className="p-fluid-lg">
+                      <div className="flex items-start space-x-fluid-md">
+                        <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                          <Code className="h-6 w-6 text-primary-foreground" />
+                        </div>
+                        <div className="space-y-fluid-sm">
+                          <h3 className="font-bold text-card-foreground text-fluid-lg">{internship.role}</h3>
+                          <p className="text-muted-foreground text-fluid-base">{internship.company}</p>
+                          <p className="text-fluid-sm text-primary font-medium">{internship.duration}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -344,26 +362,40 @@ const Index = () => {
       {/* Achievements Section */}
       <section className="section-spacing">
         <div className="container-custom">
-          <div className="text-center space-y-12">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
+          <div className="text-center space-y-fluid-2xl">
+            <motion.div 
+              className="space-y-fluid-md"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-fluid-4xl font-display text-foreground text-glow">
                 Achievements & Certificates
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-fluid-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Recognition and certifications that mark my journey in technology
               </p>
-            </div>
+            </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid-fluid">
               {achievements.map((achievement, index) => (
-                <Card key={index} className="tech-glow border-border/20 bg-card/50 backdrop-blur-sm">
-                  <CardContent className="p-6 text-center space-y-4">
-                    <div className="w-12 h-12 mx-auto gradient-primary rounded-xl flex items-center justify-center">
-                      <Award className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                    <p className="text-sm font-medium leading-relaxed text-card-foreground">{achievement}</p>
-                  </CardContent>
-                </Card>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="glass-card hover-lift h-full">
+                    <CardContent className="p-fluid-lg text-center space-y-fluid-md h-full flex flex-col justify-center">
+                      <div className="w-12 h-12 mx-auto gradient-primary rounded-xl flex items-center justify-center">
+                        <Award className="h-6 w-6 text-primary-foreground" />
+                      </div>
+                      <p className="text-fluid-sm font-medium leading-relaxed text-card-foreground">{achievement}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -373,12 +405,18 @@ const Index = () => {
       {/* About Section */}
       <section className="section-spacing">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl text-center md:text-4xl font-bold font-display text-foreground">
+          <div className="grid lg:grid-cols-2 gap-fluid-2xl items-center">
+            <motion.div 
+              className="space-y-fluid-lg"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-fluid-4xl text-center lg:text-left font-display text-foreground text-glow">
                 About Me
               </h2>
-              <div className="space-y-4 text-card-foreground leading-relaxed">
+              <div className="space-y-fluid-md text-card-foreground/90 leading-relaxed text-fluid-base">
                 <p>
                   I am a 21-year-old Computer Science Engineering student from Tiruchirappalli, 
                   passionate about creating innovative solutions through technology. As an Executive 
@@ -396,59 +434,46 @@ const Index = () => {
                   while continuing to grow as a Full Stack Developer.
                 </p>
               </div>
-            </div>
+            </motion.div>
             
-            <Card className="tech-glow border-border/20 bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-8">
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-card-foreground">Personal Details</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
-                        <MapPin className="h-4 w-4 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-card-foreground">Location</p>
-                        <p className="text-sm text-muted-foreground">Tiruchirappalli, India</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
-                        <Languages className="h-4 w-4 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-card-foreground">Languages Known</p>
-                        <p className="text-sm text-muted-foreground">
-                        English, Tamil, Hindi
-                      </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
-                        <PhoneIcon className="h-4 w-4 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-card-foreground">Phone</p>
-                        <a href="tel:+918870902132" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
-                          +91 8870902132
-                        </a>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
-                        <Mail className="h-4 w-4 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-card-foreground">Email</p>
-                        <a href="mailto:arjunpatel10015@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
-                          arjunpatel10015@gmail.com
-                        </a>
-                      </div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="glass-card hover-lift">
+                <CardContent className="p-fluid-xl">
+                  <div className="space-y-fluid-lg">
+                    <h3 className="text-fluid-2xl font-bold text-card-foreground">Personal Details</h3>
+                    <div className="space-y-fluid-md">
+                      {[
+                        { icon: MapPin, label: "Location", value: "Tiruchirappalli, India" },
+                        { icon: Languages, label: "Languages Known", value: "English, Tamil, Hindi" },
+                        { icon: PhoneIcon, label: "Phone", value: "+91 8870902132", href: "tel:+918870902132" },
+                        { icon: Mail, label: "Email", value: "arjunpatel10015@gmail.com", href: "mailto:arjunpatel10015@gmail.com" }
+                      ].map((detail, index) => (
+                        <div key={index} className="flex items-center space-x-fluid-md">
+                          <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
+                            <detail.icon className="h-4 w-4 text-primary-foreground" />
+                          </div>
+                          <div>
+                            <p className="font-medium text-card-foreground text-fluid-base">{detail.label}</p>
+                            {detail.href ? (
+                              <a href={detail.href} className="text-fluid-sm text-muted-foreground hover:text-primary transition-spring">
+                                {detail.value}
+                              </a>
+                            ) : (
+                              <p className="text-fluid-sm text-muted-foreground">{detail.value}</p>
+                            )}
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -456,49 +481,52 @@ const Index = () => {
       {/* Contact Section */}
       <section className="section-spacing border-t border-border/20">
         <div className="container-custom">
-          <div className="text-center space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
+          <div className="text-center space-y-fluid-xl">
+            <motion.div 
+              className="space-y-fluid-md"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-fluid-4xl font-display text-foreground text-glow">
                 Let's Connect
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-fluid-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 I am always open to discussing new opportunities, interesting projects, or just having a chat about technology.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground tech-glow transition-smooth" asChild>
-                <a href="mailto:arjunpatel10015@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Arjun%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards">
-                  <Mail className="mr-2 h-5 w-5" />
-                  Send Email
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground tech-glow transition-smooth" asChild>
-                <a href="https://www.linkedin.com/in/arjun-r-9434a3253" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="mr-2 h-5 w-5" />
-                  LinkedIn
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground tech-glow transition-smooth" asChild>
-                <a href="https://github.com/arjun10015" target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-5 w-5" />
-                  GitHub
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground tech-glow transition-smooth" asChild>
-                <a href="tel:+918870902132">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call Now
-                </a>
-              </Button>
+            <div className="flex flex-col sm:flex-row space-fluid-md justify-center">
+              {[
+                { icon: Mail, label: "Send Email", href: "mailto:arjunpatel10015@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Arjun%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards" },
+                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/arjun-r-9434a3253" },
+                { icon: Github, label: "GitHub", href: "https://github.com/arjun10015" },
+                { icon: Phone, label: "Call Now", href: "tel:+918870902132" }
+              ].map((contact, index) => (
+                <motion.div 
+                  key={index}
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button variant="outline" size="lg" className="glass-button text-fluid-base px-fluid-lg py-fluid-md" asChild>
+                    <a href={contact.href} target={contact.href.startsWith('http') ? "_blank" : undefined} rel={contact.href.startsWith('http') ? "noopener noreferrer" : undefined}>
+                      <contact.icon className="mr-2 h-5 w-5" />
+                      {contact.label}
+                    </a>
+                  </Button>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 text-center text-muted-foreground border-t border-border/20 mt-16">
-        © {new Date().getFullYear()} Arjun R 
+      <footer className="py-fluid-xl text-center text-muted-foreground border-t border-border/20 mt-fluid-2xl">
+        <div className="container-custom">
+          <p className="text-fluid-base">© {new Date().getFullYear()} Arjun R - Crafted with passion and modern web technologies</p>
+        </div>
       </footer>
     </div>
   );

@@ -49,19 +49,49 @@
     /* Design System Properties */
     --radius: 0.75rem;
 
-    /* Custom Gradients */
+    /* Advanced Gradients & Visual Effects */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-variant)));
     --gradient-subtle: linear-gradient(135deg, hsl(222 47% 11%), hsl(222 47% 8%));
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 11%), hsl(240 100% 70% / 0.1));
+    --gradient-hero: radial-gradient(ellipse 120% 80% at 50% 0%, hsl(240 100% 70% / 0.15), transparent 70%), 
+                     linear-gradient(135deg, hsl(222 47% 11%), hsl(222 47% 8%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card) / 0.8), hsl(var(--card) / 0.4));
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(var(--primary) / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(var(--primary-variant) / 0.2) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(var(--primary-glow) / 0.1) 0px, transparent 50%);
 
-    /* Shadows & Effects */
-    --shadow-tech: 0 10px 30px -10px hsl(var(--primary) / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
-    --shadow-elegant: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
+    /* Enhanced Shadows & Glows */
+    --shadow-tech: 0 10px 30px -10px hsl(var(--primary) / 0.3), 0 0 0 1px hsl(var(--border) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4), 0 0 80px hsl(var(--primary) / 0.2);
+    --shadow-elegant: 0 25px 50px -12px hsl(0 0% 0% / 0.25), 0 0 0 1px hsl(var(--border) / 0.1);
+    --shadow-floating: 0 32px 64px -12px hsl(0 0% 0% / 0.35), 0 0 0 1px hsl(var(--border) / 0.1);
 
-    /* Animations */
+    /* Fluid Typography Scale */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+    --text-base: clamp(1rem, 0.9rem + 0.4vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+    --text-3xl: clamp(1.875rem, 1.5rem + 1.2vw, 2.5rem);
+    --text-4xl: clamp(2.25rem, 1.8rem + 1.8vw, 3.5rem);
+    --text-5xl: clamp(3rem, 2.2rem + 3vw, 5rem);
+    --text-6xl: clamp(3.75rem, 2.5rem + 4vw, 6rem);
+    --text-7xl: clamp(4.5rem, 3rem + 6vw, 8rem);
+
+    /* Fluid Spacing Scale */
+    --space-xs: clamp(0.5rem, 0.4rem + 0.4vw, 0.75rem);
+    --space-sm: clamp(0.75rem, 0.6rem + 0.6vw, 1rem);
+    --space-md: clamp(1rem, 0.8rem + 0.8vw, 1.5rem);
+    --space-lg: clamp(1.5rem, 1.2rem + 1.2vw, 2.5rem);
+    --space-xl: clamp(2rem, 1.5rem + 2vw, 4rem);
+    --space-2xl: clamp(3rem, 2rem + 4vw, 6rem);
+    --space-3xl: clamp(4rem, 3rem + 6vw, 10rem);
+
+    /* Advanced Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -126,18 +156,26 @@
   }
 }
 
-/* Custom Utility Classes */
+/* Advanced Utility Classes */
 @layer utilities {
-  /* Layout Utilities */
+  /* Fluid Layout Utilities */
   .section-spacing {
-    @apply py-20 px-4 md:px-6;
+    padding-block: var(--space-2xl);
+    padding-inline: var(--space-md);
   }
 
   .container-custom {
     @apply max-w-7xl mx-auto;
+    padding-inline: clamp(1rem, 2vw, 2rem);
   }
 
-  /* Gradient Utilities */
+  .grid-fluid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: var(--space-lg);
+  }
+
+  /* Enhanced Gradient Utilities */
   .gradient-primary {
     background: var(--gradient-primary);
   }
@@ -148,24 +186,65 @@
 
   .gradient-hero {
     background: var(--gradient-hero);
+    position: relative;
   }
 
-  /* Effect Utilities */
+  .gradient-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-mesh);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.2);
+  }
+
+  /* Advanced Effect Utilities */
   .tech-glow {
     box-shadow: var(--shadow-tech);
     transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tech-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, hsl(var(--primary) / 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .tech-glow:hover::before {
+    transform: translateX(100%);
   }
 
   .tech-glow:hover {
     box-shadow: var(--shadow-glow);
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.02);
   }
 
-  .shadow-elegant {
-    box-shadow: var(--shadow-elegant);
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
   }
 
-  /* Animation Utilities */
+  .floating-element:nth-child(even) {
+    animation-delay: -3s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+  }
+
+  /* Enhanced Animation Utilities */
   .transition-smooth {
     transition: var(--transition-smooth);
   }
@@ -174,9 +253,31 @@
     transition: var(--transition-bounce);
   }
 
-  /* Typography Utilities */
+  .transition-elastic {
+    transition: var(--transition-elastic);
+  }
+
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+
+  /* Fluid Typography Utilities */
+  .text-fluid-xs { font-size: var(--text-xs); }
+  .text-fluid-sm { font-size: var(--text-sm); }
+  .text-fluid-base { font-size: var(--text-base); }
+  .text-fluid-lg { font-size: var(--text-lg); }
+  .text-fluid-xl { font-size: var(--text-xl); }
+  .text-fluid-2xl { font-size: var(--text-2xl); }
+  .text-fluid-3xl { font-size: var(--text-3xl); }
+  .text-fluid-4xl { font-size: var(--text-4xl); }
+  .text-fluid-5xl { font-size: var(--text-5xl); }
+  .text-fluid-6xl { font-size: var(--text-6xl); }
+  .text-fluid-7xl { font-size: var(--text-7xl); }
+
+  /* Enhanced Typography Effects */
   .font-display {
     @apply font-bold tracking-tight;
+    line-height: 1.1;
   }
 
   .text-gradient {
@@ -184,5 +285,53 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  /* Glassmorphism Effects */
+  .glass-card {
+    background: hsl(var(--card) / 0.1);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.2);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .glass-button {
+    background: hsl(var(--primary) / 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--primary) / 0.3);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-button:hover {
+    background: hsl(var(--primary) / 0.2);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Responsive Spacing */
+  .space-fluid-xs { gap: var(--space-xs); }
+  .space-fluid-sm { gap: var(--space-sm); }
+  .space-fluid-md { gap: var(--space-md); }
+  .space-fluid-lg { gap: var(--space-lg); }
+  .space-fluid-xl { gap: var(--space-xl); }
+  .space-fluid-2xl { gap: var(--space-2xl); }
+
+  /* Interactive Hover States */
+  .hover-lift {
+    transition: var(--transition-spring);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-floating);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
   }
 }

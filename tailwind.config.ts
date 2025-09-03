@@ -74,16 +74,43 @@ export default {
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-subtle': 'var(--gradient-subtle)',
-				'gradient-hero': 'var(--gradient-hero)'
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-mesh': 'var(--gradient-mesh)'
 			},
 			boxShadow: {
 				'tech': 'var(--shadow-tech)',
 				'glow': 'var(--shadow-glow)',
-				'elegant': 'var(--shadow-elegant)'
+				'elegant': 'var(--shadow-elegant)',
+				'floating': 'var(--shadow-floating)'
+			},
+			fontSize: {
+				'fluid-xs': 'var(--text-xs)',
+				'fluid-sm': 'var(--text-sm)',
+				'fluid-base': 'var(--text-base)',
+				'fluid-lg': 'var(--text-lg)',
+				'fluid-xl': 'var(--text-xl)',
+				'fluid-2xl': 'var(--text-2xl)',
+				'fluid-3xl': 'var(--text-3xl)',
+				'fluid-4xl': 'var(--text-4xl)',
+				'fluid-5xl': 'var(--text-5xl)',
+				'fluid-6xl': 'var(--text-6xl)',
+				'fluid-7xl': 'var(--text-7xl)'
+			},
+			spacing: {
+				'fluid-xs': 'var(--space-xs)',
+				'fluid-sm': 'var(--space-sm)',
+				'fluid-md': 'var(--space-md)',
+				'fluid-lg': 'var(--space-lg)',
+				'fluid-xl': 'var(--space-xl)',
+				'fluid-2xl': 'var(--space-2xl)',
+				'fluid-3xl': 'var(--space-3xl)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
-				'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+				'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+				'elastic': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+				'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
