@@ -67,7 +67,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-[0.8fr_1fr] gap-12 lg:gap-20 items-center">
             {/* Profile Picture */}
-            <motion.div className="flex items-center justify-center lg:justify-start order-2 lg:order-1"
+            <motion.div className="flex items-center justify-center lg:justify-start order-1 lg:order-1"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -84,7 +84,7 @@ const Index = () => {
 
             {/* Hero Text */}
             <motion.div
-              className="text-center lg:text-left space-y-8 order-1 lg:order-2"
+              className="text-center lg:text-left space-y-8 order-2 lg:order-2"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
