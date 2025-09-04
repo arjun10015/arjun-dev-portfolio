@@ -190,8 +190,7 @@ const Index = () => {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <Card className="tech-glow glass-card hover-lift h-full transition-all duration-500 group-hover:shadow-2xl border-2 hover:border-primary/30">
-                    <CardContent className="p-8 lg:p-10 text-center space-y-8 h-full flex flex-col">
+                    <Card className="tech-glow glass-card hover-lift h-full transition-all duration-500 border-2 hover:border-primary/30 !shadow-[0_0_35px_rgba(255,255,255,0.3)] hover:!shadow-[0_0_50px_rgba(255,255,255,0.7)]">                    <CardContent className="p-8 lg:p-10 text-center space-y-8 h-full flex flex-col">
                       <div className="w-20 h-20 mx-auto gradient-primary rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
                         <category.icon className="h-10 w-10 text-primary-foreground" />
                       </div>
@@ -241,8 +240,7 @@ const Index = () => {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <Card className="tech-glow glass-card hover-lift h-full transition-all duration-500 group-hover:shadow-2xl border-2 hover:border-primary/30">
-                    <CardContent className="p-8 lg:p-10 space-y-8 h-full flex flex-col">
+                    <Card className="tech-glow glass-card hover-lift h-full transition-all duration-500 border-2 hover:border-primary/30 !shadow-[0_0_35px_rgba(255,255,255,0.3)] hover:!shadow-[0_0_50px_rgba(255,255,255,0.6)]">                    <CardContent className="p-8 lg:p-10 space-y-8 h-full flex flex-col">
                       <div className="space-y-6 flex-1">
                         <div className="text-center space-y-4">
                           <h3 className="text-xl lg:text-2xl font-bold text-card-foreground group-hover:text-primary transition-colors duration-300">
@@ -309,7 +307,7 @@ const Index = () => {
                     grade: "85.50% | 2021 - 2022"
                   }
                 ].map((edu, index) => (
-                  <Card key={index} className="tech-glow glass-card hover-lift group transition-all duration-500 border-2 hover:border-primary/30">
+                  <Card className="tech-glow glass-card hover-lift h-full transition-all duration-500 border-2 hover:border-primary/30 !shadow-[0_0_35px_rgba(255,255,255,0.3)] hover:!shadow-[0_0_50px_rgba(255,255,255,0.6)]">                    
                     <CardContent className="p-8 lg:p-10">
                       <div className="flex items-start gap-6">
                         <div className="w-16 h-16 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-all duration-300">
@@ -343,7 +341,7 @@ const Index = () => {
               
               <div className="space-y-8">
                 {internships.map((internship, index) => (
-                  <Card key={index} className="tech-glow glass-card hover-lift group transition-all duration-500 border-2 hover:border-primary/30">
+                  <Card key={index} className="tech-glow glass-card hover-lift h-full transition-all duration-500 border-2 hover:border-primary/30 !shadow-[0_0_35px_rgba(255,255,255,0.3)] hover:!shadow-[0_0_50px_rgba(255,255,255,0.6)]">
                     <CardContent className="p-8 lg:p-10">
                       <div className="flex items-start gap-6">
                         <div className="w-16 h-16 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-all duration-300">
@@ -395,7 +393,7 @@ const Index = () => {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <Card className="tech-glow glass-card hover-lift h-full transition-all duration-500 group-hover:shadow-2xl border-2 hover:border-primary/30 ">
+                  <Card className="tech-glow glass-card hover-lift h-full transition-all duration-500 border-2 hover:border-primary/30 !shadow-[0_0_35px_rgba(255,255,255,0.3)] hover:!shadow-[0_0_50px_rgba(255,255,255,0.6)]">
                     <CardContent className="p-8 lg:p-10 text-center space-y-6 h-full flex flex-col justify-center">
                       <div className="w-16 h-16 mx-auto gradient-primary rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
                         <Award className="h-8 w-8 text-primary-foreground" />
@@ -451,7 +449,7 @@ const Index = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <Card className="tech-glow glass-card hover-lift transition-all duration-500 border-2 hover:border-primary/30">
+              <Card className="tech-glow glass-card hover-lift transition-all duration-500 border-2 hover:border-primary/30 !shadow-[0_0_35px_rgba(255,255,255,0.5)]">                
                 <CardContent className="p-8 lg:p-10">
                   <div className="space-y-8">
                     <h3 className="text-2xl lg:text-3xl font-bold text-card-foreground group-hover:text-primary transition-colors duration-300">Personal Details</h3>
