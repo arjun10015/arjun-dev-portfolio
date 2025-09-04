@@ -424,7 +424,7 @@ const Index = () => {
               </h2>
               <div className="space-y-6 text-card-foreground/90 leading-relaxed text-base lg:text-lg">
                 <p>
-                  I am a 21-year-old Computer Science Engineering student from Tiruchirappalli, 
+                  I am a Computer Science Engineering student from Tiruchirappalli, 
                   passionate about creating innovative solutions through technology. As an Executive 
                   Member of Turing Guild, I actively organize technical events and participate in 
                   workshops and symposiums across various colleges.
