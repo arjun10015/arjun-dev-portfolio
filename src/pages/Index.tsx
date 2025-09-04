@@ -35,7 +35,7 @@ const Index = () => {
       tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Figma"],
       role: "Full Stack Developer & UI/UX Designer",
       duration: "2 Months",
-      achievement: "Developed during Hackathon"
+      achievement: "Hackathon (JJCET)"
     }
   ];
 
