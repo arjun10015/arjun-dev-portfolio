@@ -36,7 +36,8 @@ const Index = () => {
     "Won 3rd Prize with Cash Award in Technical Quiz", 
     "Best Volunteer Award 2016",
     "Java (NPTEL) Certification",
-    "UI/UX Design & Dev with Vue Training"
+    "UI/UX Design & Dev with Vue Training",
+    "React.js(Infosis Springboard)"
   ];
 
   const internships = [
