@@ -37,7 +37,7 @@ const Index = () => {
     "Best Volunteer Award 2016",
     "Java (NPTEL) Certification",
     "UI/UX Design & Dev with Vue Training",
-    "React.js(Infosis Springboard)"
+    "React.js (Infosis Springboard)"
   ];
 
   const internships = [
