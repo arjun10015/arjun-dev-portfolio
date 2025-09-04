@@ -28,6 +28,14 @@ const Index = () => {
       role: "UI/UX Designer & Front-end Developer", 
       duration: "1 Month",
       achievement: "College Project"
+    },
+    {
+      title: "HealWise - Smart Healthcare Management System",
+      description: "A healthcare web and mobile application designed to streamline hospital operations, featuring real-time bed allocation, doctor listing, emergency SOS support, and appointment booking. The system enhances patient experience and ensures efficient hospital resource management.",
+      tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Figma"],
+      role: "Full Stack Developer & UI/UX Designer",
+      duration: "2 Months",
+      achievement: "Developed during Hackathon"
     }
   ];
 
