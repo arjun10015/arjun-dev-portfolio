@@ -123,7 +123,7 @@ const Index = () => {
                   </Button>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button variant="outline" size="lg" className="glass-button hover:gradient-primary h-12 px-8 text-base font-medium border-2 hover:border-primary/50 transition-all duration-300" asChild>
+                  <Button variant="outline" size="lg" className="glass-button hover:gradient-primary h-12 px-8 text-base font-medium border-2 hover:border-primary/50  transition-all duration-300" asChild>
                     <a href={resume} download="Arjun_R_Resume.pdf">
                       <ExternalLink className="mr-2 h-5 w-5" />
                         Download Resume
@@ -144,7 +144,7 @@ const Index = () => {
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-14 h-14 rounded-xl glass-button flex items-center justify-center text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110 hover:shadow-xl group"
+                    className="w-14 h-14 rounded-xl glass-button flex items-center justify-center text-foreground/70 hover:gradient-primary transition-all duration-300 hover:scale-110 hover:shadow-xl group"
                     whileHover={{ scale: 1.15, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -190,7 +190,7 @@ const Index = () => {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <Card className="glass-card hover-lift h-full transition-all duration-500 group-hover:shadow-2xl border-2 hover:border-primary/30">
+                  <Card className="tech-glow glass-card hover-lift h-full transition-all duration-500 group-hover:shadow-2xl border-2 hover:border-primary/30">
                     <CardContent className="p-8 lg:p-10 text-center space-y-8 h-full flex flex-col">
                       <div className="w-20 h-20 mx-auto gradient-primary rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
                         <category.icon className="h-10 w-10 text-primary-foreground" />
@@ -241,7 +241,7 @@ const Index = () => {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <Card className="glass-card hover-lift h-full transition-all duration-500 group-hover:shadow-2xl border-2 hover:border-primary/30">
+                  <Card className="tech-glow glass-card hover-lift h-full transition-all duration-500 group-hover:shadow-2xl border-2 hover:border-primary/30">
                     <CardContent className="p-8 lg:p-10 space-y-8 h-full flex flex-col">
                       <div className="space-y-6 flex-1">
                         <div className="text-center space-y-4">
@@ -309,7 +309,7 @@ const Index = () => {
                     grade: "85.50% | 2021 - 2022"
                   }
                 ].map((edu, index) => (
-                  <Card key={index} className="glass-card hover-lift group transition-all duration-500 border-2 hover:border-primary/30">
+                  <Card key={index} className="tech-glow glass-card hover-lift group transition-all duration-500 border-2 hover:border-primary/30">
                     <CardContent className="p-8 lg:p-10">
                       <div className="flex items-start gap-6">
                         <div className="w-16 h-16 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-all duration-300">
@@ -343,7 +343,7 @@ const Index = () => {
               
               <div className="space-y-8">
                 {internships.map((internship, index) => (
-                  <Card key={index} className="glass-card hover-lift group transition-all duration-500 border-2 hover:border-primary/30">
+                  <Card key={index} className="tech-glow glass-card hover-lift group transition-all duration-500 border-2 hover:border-primary/30">
                     <CardContent className="p-8 lg:p-10">
                       <div className="flex items-start gap-6">
                         <div className="w-16 h-16 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-all duration-300">
@@ -395,7 +395,7 @@ const Index = () => {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <Card className="glass-card hover-lift h-full transition-all duration-500 group-hover:shadow-2xl border-2 hover:border-primary/30">
+                  <Card className="tech-glow glass-card hover-lift h-full transition-all duration-500 group-hover:shadow-2xl border-2 hover:border-primary/30 ">
                     <CardContent className="p-8 lg:p-10 text-center space-y-6 h-full flex flex-col justify-center">
                       <div className="w-16 h-16 mx-auto gradient-primary rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
                         <Award className="h-8 w-8 text-primary-foreground" />
@@ -451,7 +451,7 @@ const Index = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <Card className="glass-card hover-lift transition-all duration-500 border-2 hover:border-primary/30">
+              <Card className="tech-glow glass-card hover-lift transition-all duration-500 border-2 hover:border-primary/30">
                 <CardContent className="p-8 lg:p-10">
                   <div className="space-y-8">
                     <h3 className="text-2xl lg:text-3xl font-bold text-card-foreground group-hover:text-primary transition-colors duration-300">Personal Details</h3>
@@ -518,7 +518,7 @@ const Index = () => {
                   whileHover={{ scale: 1.05 }} 
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button variant="outline" size="lg" className="glass-button hover:gradient-primary h-14 px-8 text-base font-medium border-2 hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-xl" asChild>
+                  <Button variant="outline" size="lg" className="tech-glow glass-button hover:gradient-primary h-14 px-8 text-base font-medium border-2  transition-all duration-300 shadow-lg hover:shadow-xl" asChild>
                     <a href={contact.href} target={contact.href.startsWith('http') ? "_blank" : undefined} rel={contact.href.startsWith('http') ? "noopener noreferrer" : undefined}>
                       <contact.icon className="mr-3 h-5 w-5" />
                       {contact.label}
