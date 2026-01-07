@@ -15,7 +15,7 @@ const Index = () => {
   const projects = [
     {
       title: "AgroSphere",
-      description: "Smart India Hackathon 2024 project - A user-friendly mobile app connecting farmers, consumers, and institutions in a unified agri-network with real-time market prices and product auctions.",
+      description: "Smart India Hackathon 2024 project - A user friendly mobile app connecting farmers, consumers, and institutions in a unified agri-network with real-time market prices and product auctions.",
       tech: ["Figma", "Android Studio", "UI/UX Design"],
       role: "UI/UX Designer & Front-end Developer",
       duration: "1 Month",
