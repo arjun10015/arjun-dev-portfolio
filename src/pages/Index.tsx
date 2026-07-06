@@ -150,7 +150,7 @@ const Index = () => {
               {/* Social Links */}
               <div className="flex justify-center lg:justify-start gap-6 pt-8">
                 {[ 
-                  { icon: SiLeetcode, label: "Leetcode", href: "https://www.leetcode.com/arjun10015" },
+                  { Icon: SiLeetcode, link: "https://www.leetcode.com/arjun10015" },
                   { Icon: Linkedin, link: "https://www.linkedin.com/in/arjun-r-9434a3253" },
                   { Icon: Github, link: "https://github.com/arjun10015" },
                   { Icon: Mail, link: "mailto:arjunpatel10015@gmail.com" }
