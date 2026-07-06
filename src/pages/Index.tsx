@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Phone, Award, GraduationCap, MapPin, Languages, PhoneIcon } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 import heroTech from "@/assets/hero-tech.jpg";
 import myPic from "@/assets/mypic.jpg";
 import { motion } from "framer-motion";
@@ -522,7 +523,7 @@ const Index = () => {
               {[
                 { icon: Mail, label: "Send Email", href: "mailto:arjunpatel10015@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Arjun%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards" },
                 { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/arjun-r-9434a3253" },
-                { icon: Github, label: "GitHub", href: "https://github.com/arjun10015" },
+                { icon: SiLeetcode, label: "Leetcode", href: "https://www.leetcode.com/arjun10015" },
                 { icon: Phone, label: "Call Now", href: "tel:+918870902132" }
               ].map((contact, index) => (
                 <motion.div 
