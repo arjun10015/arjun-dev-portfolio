@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Phone, Award, GraduationCap, MapPin, Languages, PhoneIcon } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Phone, Award, GraduationCap, MapPin, Languages, PhoneIcon, Briefcase, FolderGit2, Trophy } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import heroTech from "@/assets/hero-tech.jpg";
 import myPic from "@/assets/mypic.jpg";
@@ -52,7 +52,7 @@ const Index = () => {
   const internships = [
     {
       company: "Ogon Consulting",
-      role: "Software Developer",
+      role: "Software Engineer",
       duration: "May 2026 - Present"
     },
     {
@@ -109,7 +109,7 @@ const Index = () => {
                   Hi, I'm Arjun R 👋
                 </h1>
                 <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-foreground/80 font-semibold">
-                  Full Stack Developer
+                  Software Engineer | Full Stack Developer
                 </h2>
               </div>
               
@@ -173,6 +173,42 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-12 lg:py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+            {[
+                { icon: Briefcase, value: "3+", label: "Internships" },
+                { icon: FolderGit2, value: "8+", label: "Projects" },
+                { icon: Award, value: "6+", label: "Certificates" },
+                { icon: Trophy, value: "2024", label: "SIH Finalist" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="glass-card hover-lift text-center border-2 hover:border-primary/40">
+                  <CardContent className="py-8">
+                    <h3 className="text-4xl font-bold text-primary">
+                      {item.value}
+                    </h3>
+
+                    <p className="mt-2 text-muted-foreground font-medium">
+                      {item.label}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+                
       {/* Skills Section */}
       <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -524,7 +560,6 @@ const Index = () => {
               {[
                 { icon: Mail, label: "Send Email", href: "mailto:arjunpatel10015@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Arjun%2C%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards" },
                 { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/arjun-r-9434a3253" },
-                { icon: SiLeetcode, label: "Leetcode", href: "https://www.leetcode.com/arjun10015" },
                 { icon: Phone, label: "Call Now", href: "tel:+918870902132" }
               ].map((contact, index) => (
                 <motion.div 
