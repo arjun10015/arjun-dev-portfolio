@@ -50,6 +50,11 @@ const Index = () => {
 
   const internships = [
     {
+      company: "Ogon Consulting",
+      role: "Software Developer",
+      duration: "May 2026 - Present"
+    },
+    {
       company: "CodeVertex",
       role: "Web Developer",
       duration: "3 months"
